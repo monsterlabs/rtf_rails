@@ -1,6 +1,6 @@
 = Rtf::Rails
 
-Rtf::Rails provides a simple way of creating PDF views in Rails 3 using the rtf library.
+Rtf::Rails provides a simple way of creating RTF views in Rails 3 using the rtf library.
 
 To use Rtf::Rails simply add the line
 
@@ -73,15 +73,12 @@ This will produce a rtf with Jane, John, and Jack all written on seperate lines.
 === Force Saving
 
 The :force_download option makes the browser display a 'save as' dialog rather than attempting to display the content in browser (this is achieved by setting the Content-Dispoition header).
-Note: due to problems with the Acrobat Reader plugin, this defaults to true if the :filename option is used.
 
 views/.../saveas.rtf.rtf_rb
 
   rtf_document(:force_download=>true) do |rtf|
     rtf << "Hello World"
   end
-
-The above will cause a 'save as' dialog to appear, even in browsers with a PDF plugin.
 
 Finally is the :filename option.  This allows you to override the default filename to something other than the name of the action.
 Note: You should include the .rtf extension in the filename.  Rtf::Rails will not do this for you.
