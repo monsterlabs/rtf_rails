@@ -15,13 +15,16 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "rtf_rails"
-  gem.homepage = "http://github.com/juarlex/rtf_rails"
+  gem.homepage = "http://github.com/monsterlabs/rtf_rails"
+  gem.has_rdoc = false
+  gem.extra_rdoc_files = ["README.rdoc"]
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "juarlex@gmail.com"
+  gem.summary = %Q{Integrates RTF gem into Rails in a natural way}
+  gem.description = %Q{Rtf::Rails provides a simple way of creating RTF views in Rails 3 using the rtf library.}
+  gem.email = "alex@monsterlabs.com.mx"
   gem.authors = ["Alejandro Juarez Robles"]
-  # dependencies defined in Gemfile
+  gem.add_dependency('rails', '>=3.0.0')
+  gem.add_dependency('rtf', '~> 0.3.3')
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -32,13 +35,6 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
-end
 
 task :default => :test
 

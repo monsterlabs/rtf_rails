@@ -1,0 +1,1 @@
+require 'rtf_rails'
